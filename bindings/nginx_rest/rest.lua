@@ -76,7 +76,7 @@ function rest_handle(ngx)
     if ret then 
         return 200, err
     else 
-        return 400, "operate failed"
+        return 404, "not found"
     end
 end
 

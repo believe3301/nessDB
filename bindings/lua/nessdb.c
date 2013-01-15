@@ -52,7 +52,7 @@ static int nessdb_get(lua_State *L)
     int ret = db_get(db, &key, &value);
     if (ret == 1) {
         lua_pushlstring(L,value.data,value.len);
-        free(value.data);
+        db_free_data(value.data);
         return 1;
     }
 
